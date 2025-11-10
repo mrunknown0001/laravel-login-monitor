@@ -10,7 +10,7 @@ class LoginMonitor
     protected $host;
     protected $enabled;
 
-    public function __construct($host, $enabled = true)
+    public function __construct($host = 'http://localhost:8001', $enabled = true)
     {
         $this->host = $host;
         $this->enabled = $enabled;
