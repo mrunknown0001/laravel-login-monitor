@@ -6,8 +6,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Your Name",
-            "email": "your.email@example.com"
+            "name": "Mrunknown0001",
+            "email": "madamt0001@gmail.com"
         }
     ],
     "require": {
@@ -31,5 +31,8 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "require-dev": {
+        "laravel/framework": "^12.0"
+    }
 }

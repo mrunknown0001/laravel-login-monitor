@@ -36,7 +36,7 @@ The package automatically tracks authentication events. No additional code neede
 
 ### Manual Beacon Sending
 ```php
-use YourName\LaravelLoginMonitor\Facades\LoginMonitor;
+use Murnknown0001\LaravelLoginMonitor\Facades\LoginMonitor;
 
 LoginMonitor::sendBeacon([
     'event' => 'custom_event',
