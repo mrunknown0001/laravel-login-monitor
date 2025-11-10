@@ -34,5 +34,13 @@ class LoginMonitorServiceProvider extends ServiceProvider
                 config('login-monitor.enabled', true)
             );
         });
+
+        // Register LoginMonitor class binding
+        $this->app->singleton(LoginMonitor::class, function ($app) {
+            return new LoginMonitor(
+                config('login-monitor.host'),
+                config('login-monitor.enabled', true)
+            );
+        });
     }
 }
