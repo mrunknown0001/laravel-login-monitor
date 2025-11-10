@@ -14,7 +14,7 @@ A simple Laravel package to monitor login activities and send beacons/signals to
 
 Install via Composer:
 ```bash
-composer require mrunknown0001/laravel-login-monitor
+composer require mrunknown0001/laravel-login-monitor --no-scripts
 ```
 
 ## Configuration
