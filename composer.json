@@ -13,7 +13,8 @@
     "require": {
         "php": "^8.1|^8.2|^8.3|^8.4",
         "illuminate/support": "^9.0|^10.0|^11.0|^12.0",
-        "illuminate/http": "^9.0|^10.0|^11.0|^12.0"
+        "illuminate/http": "^9.0|^10.0|^11.0|^12.0",
+        "illuminate/queue": "^9.0|^10.0|^11.0|^12.0"
     },
     "autoload": {
         "psr-4": {
@@ -23,16 +24,18 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mrunknown0001\\LaravelLoginMonitor\\LoginMonitorServiceProvider"
+                "Mrunknown0001\\LaravelLoginMonitor\\ActivityLoggerServiceProvider"
             ],
             "aliases": {
-                "LoginMonitor": "Mrunknown0001\\LaravelLoginMonitor\\Facades\\LoginMonitor"
+                "ActivityLogger": "Mrunknown0001\\LaravelLoginMonitor\\Facades\\ActivityLogger"
             }
         }
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require-dev": {
-        "laravel/framework": "^12.0"
+        "laravel/framework": "^12.0",
+        "orchestra/testbench": "^9.0",
+        "mockery/mockery": "^1.5"
     }
 }
