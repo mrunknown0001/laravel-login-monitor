@@ -14,7 +14,7 @@ use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Mrunknown0001\LaravelLoginMonitor\Contracts\ActivityLogger as ActivityLoggerContract;
-use Mrunknown0001\LaravelLoginMonitor\Facades\ActivityLogger;
+use Mrunknown0001\LaravelLoginMonitor\ActivityLogger as ActivityLoggerService;
 use Mrunknown0001\LaravelLoginMonitor\Http\Middleware\LogRequestActivity;
 use Mrunknown0001\LaravelLoginMonitor\Listeners\LogAuthenticationEvents;
 
@@ -46,14 +46,14 @@ final class ActivityLoggerServiceProvider extends ServiceProvider
      */
     protected function registerBindings(): void
     {
-        $this->app->singleton(ActivityLogger::class, static function (Application $app) {
-            return new ActivityLogger(
-                config('activity-logger')
+        $this->app->singleton(ActivityLoggerContract::class, static function (Application $app) {
+            return new ActivityLoggerService(
+                config('activity-logger', [])
             );
         });
 
-        $this->app->alias(ActivityLogger::class, ActivityLoggerContract::class);
-        $this->app->alias(ActivityLogger::class, 'activity-logger');
+        $this->app->alias(ActivityLoggerContract::class, ActivityLoggerService::class);
+        $this->app->alias(ActivityLoggerContract::class, 'activity-logger');
     }
 
     protected function registerMiddleware(): void
